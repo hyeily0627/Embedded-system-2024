@@ -54,3 +54,5 @@ list03.c
 ## day05
 - 함수로 구현하기 
 
+## day06
+- stack 과 queue 연결리스트
