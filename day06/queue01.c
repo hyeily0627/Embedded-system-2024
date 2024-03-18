@@ -32,5 +32,5 @@ void main()
   enqueue(20);
   enquque(30);
 
-  printf("%d/n", dequque());
-  printf("%d/n", dequque());
+  printf("%d/n", dequeue());
+  printf("%d/n", dequeue());
