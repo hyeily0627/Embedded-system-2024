@@ -5,13 +5,13 @@ int queue[Q_SIZE];
 int front = -1;
 int rear = -1;
 
-void enqueue (int _data)
-{
-   if (rear >= Q_SIZE -1) {
-       printf("QUEUE OVERFLOW!!\n");
-       return;
+void enqueue(int _data) {
+    if (rear >= Q_SIZE -1) {
+        printf("QUEUE OVERFLOW!!\n");
+        return;
     }
     queue[++rear] = _data;
+}
 
 int dequeue() {
     if (front == rear) {
@@ -21,16 +21,11 @@ int dequeue() {
     return queue[++front];
 }
 
-void main()
-{
-  //int rear = -1;
-  //int front = -1;
-  //int queue[Q_SIZE];
+void main() {
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
 
-  //enqueue(queue, rear, 10);
-  enqueue(10);
-  enqueue(20);
-  enquque(30);
-
-  printf("%d/n", dequeue());
-  printf("%d/n", dequeue());
+    printf("%d\n", dequeue());
+    printf("%d\n", dequeue());
+}
