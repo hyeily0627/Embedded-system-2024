@@ -56,3 +56,26 @@ list03.c
 
 ## day06
 - stack 과 queue 연결리스트
+
+## day07
+- queue 순차리스트
+
+- C/makeT 폴더에 생성함
+- main.c inputf.c printf.c 생성
+- gcc printf.c input.c main.c 컴파일
+- makefile 생성 후 아래 입력
+  
+test: main.o inputf.o printf.o
+  gcc -o test main.o inputf.o printf.o
+
+main.o: main.c
+  gcc -c main.c
+
+inputf.o: inputf.c
+  gcc -c inputf.c
+
+printf.o: printf.c
+  gcc -c printf.c
+- make 입력
+    - test 파일, .o로 확장자 파일 생성 
+??????????????????
