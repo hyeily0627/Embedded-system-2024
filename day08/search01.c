@@ -1,4 +1,4 @@
-
+// 선형탐색 함수구현
  2 #include <stdio.h>
  3
  4 int lSearch(int *ary, int size, int find) {
