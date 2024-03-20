@@ -1,4 +1,5 @@
- 1 #include <stdio.h>
+//파일의 생성 및 데이터의 저장 
+1 #include <stdio.h>
  2 #include <stdlib.h>
  3 #include <fcntl.h>
  4 #include <unistd.h>
