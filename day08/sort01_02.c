@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+//이건 버블정렬
 void arysort(int *ary, int size) {
     int i, j, temp = 0;
     for (i = 0; i < size -1; i++) {
