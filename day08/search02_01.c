@@ -5,7 +5,7 @@
  4
  5 void main()
  6 {
- 7   int ary[] = { 3, 5, 2, 4, 9, 8, 1}
+ 7   int ary[] = {1, 2, 3, 4, 5, 6, 7, 8, 9}
  8   int size = sizeof(ary) / sizeof(ary[0]);
  9   int first = 0;
 10   int last = size;
