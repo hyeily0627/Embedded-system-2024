@@ -1,4 +1,4 @@
-                     I
+
  1 // 이진탐색
  2
  3 #include <stdio.h>
