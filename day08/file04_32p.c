@@ -1,31 +1,35 @@
- 1 #include <stdio.h>
- 2 #include <stdlib.h>
- 3 #include <fcntl.h>
- 4 #include <unistd.h>
- 5 #define BUF_SIZE 100
- 6 void error_handling(char* message);
- 7
- 8 int main()
- 9 {
-10    int fd;
-11    char buf[BUF_SIZE];
-12
-13    fd = open("data.txt", O_RDONLY);
-14    if( fd == -1)
-15       error_handling("open() error!");
-16    printf("file descriptor: %d \n", fd);
-17
-18    if(read(fd, buf, sizeof(buf))==-1)
-19       error_handling("read() error!");
-20    printf("file data: %s", buf);
-21    close(fd);
-22    return 0;
-23 }
-24
-25 void error_handling(char* message)
-26 {
-27   fputs(message, stderr);
-28   fputc('\n',stderr);
-29   exit(1);
-30 }
-31
+// desc: 생성한 파일 data.txt에 저장된 데이터를 read 함수를 이용해 읽기
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #define BUF_SIZE 100
+ void error_handling(char* message);
+
+ int main(void)
+ {
+   int fd;
+   char buf[BUF_SIZE];
+
+   fd=open("data.txt", O_RDONLY); // 읽기 전용으로 파일 열기
+
+   // 예외처리(리눅스에서 -1은 실패)
+   if(fd == -1)
+     error_handling("open() error!");
+   printf("file descriptor: %d \n", fd);
+
+   if(read(fd, buf, sizeof(buf))==-1) // read 함수이용, 11행에 선언된 buf에 읽어 들인 데이터 저장
+     error_handling("read() error!");
+
+   printf("file data: %s", buf); // buf 출력
+    close(fd);
+    return 0;
+ }
+
+ void error_handling(char* message)
+ {
+   fputs(message, stderr);
+   fputc('\n',stderr);
+   exit(1);
+ }
+
