@@ -112,6 +112,20 @@ void printBooks() {
     }
 }
 
+// 도서 목록 메모리 해제 함수
+void freeBooks() {
+    Book *current = head.head;
+    Book *next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    head.head = NULL; // 헤드를 NULL로 설정하여 리스트 초기화
+}
+
 // 메인 함수
 int main() {
     int pick;
