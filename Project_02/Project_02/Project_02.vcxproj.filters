@@ -21,7 +21,16 @@
     <ClCompile Include="Version_1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Version_1도서검색up.cpp">
+    <ClCompile Include="Version_1_1도서검색up.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Version_2_1도서검색up.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Version_1_2중복서치.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Version_2_2중복서치.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

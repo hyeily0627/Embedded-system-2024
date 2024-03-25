@@ -49,12 +49,15 @@ void addBook() {
         }
         temp->next = newBook;
     }
+    printf("도서가 등록되었습니다!\n");
+    printf("\n");
 }
 // 도서 검색 
 void searchAndRentBook() {
     char searchISBN[100];
     printf("검색할 도서의 ISBN을 입력하세요: ");
     scanf("%s", searchISBN);
+
 
     Book* temp = head.head;
     while (temp != NULL) {
@@ -193,6 +196,7 @@ int main() {
 
         printf("메뉴를 선택하세요(*숫자만 입력):");
         scanf("%d", &pick);
+        printf("\n");
 
         // 선택된 메뉴에 따라 해당 함수 호출
         if (pick == 1)

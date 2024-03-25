@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// 책구조체 정의 
 typedef struct Book {
     char ISBN[100];
     char author[100];
@@ -65,6 +66,7 @@ void searchBook() {
     printf("해당 ISBN으로 도서를 찾을 수 없습니다.\n");
 }
 
+// 도서삭제함수 
 void deleteBook() {
     char delISBN[100];
     printf("삭제할 도서의 ISBN을 입력하세요: ");
@@ -92,6 +94,7 @@ void deleteBook() {
     printf("해당 ISBN으로 도서를 찾을 수 없습니다.\n");
 }
 
+// 도서출력함수 
 void printBooks() {
     if (head.head == NULL) {
         printf("등록된 도서가 없습니다.\n");
