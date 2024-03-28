@@ -23,13 +23,13 @@ Head head;
 void addBook() {
     Book* newBook = (Book*)malloc(sizeof(Book)); // 새로운 책을 위한 메모리 할당
     if (newBook == NULL) {
-        printf("메모리 할당 실패 !\n"); // 메모리 할당 실패 시 에러 메시지 출력
+        printf("메모리 할당 실패 !\n"); 
         return;
     }
     printf("--- 도서를 등록합니다 --- \n");
 
     printf("도서의 ISBN을 입력하세요: ");
-    scanf("%s", newBook->ISBN); // ISBN 입력 받음
+    scanf("%s", newBook->ISBN); 
 
     // 이미 등록된 도서들의 ISBN과 비교하여 중복 여부 확인
     Book* temp = head.head;
@@ -43,11 +43,11 @@ void addBook() {
     }
 
     printf("도서의 저자를 입력하세요: ");
-    scanf("%s", newBook->author); // 저자 입력 받음
+    scanf("%s", newBook->author); 
     printf("도서의 제목을 입력하세요(공백제외): ");
-    scanf("%s", newBook->title); // 제목 입력 받음
+    scanf("%s", newBook->title); 
     printf("도서의 가격을 입력하세요: ");
-    scanf("%d", &newBook->price); // 가격 입력 받음
+    scanf("%d", &newBook->price); 
 
     newBook->isRented = 0; // 새 책은 미대여 상태로 초기화
     newBook->next = NULL;
@@ -67,7 +67,7 @@ void addBook() {
     printf("도서가 등록되었습니다!\n");
     printf("\n");
 }
-// 도서 검색 
+// 도서 검색 함수
 void searchAndRentBook() {
     char searchentry[100];
     printf("-- 도서를 검색합니다 -- \n");
@@ -101,7 +101,7 @@ void searchAndRentBook() {
         }
         temp = temp->next;
     }
-    if (!found) { // 검색 결과를 찾지 못했을 경우에만 해당 문구 출력
+    if (!found) { 
         printf("해당 검색어로 도서를 찾을 수 없습니다.\n");
     }
     else {
@@ -180,7 +180,7 @@ void deleteBook() {
         current = current->next;
     }
 
-    printf("해당 ISBN으로 도서를 찾을 수 없습니다.\n"); // 책을 찾지 못한 경우 메시지 출력
+    printf("해당 ISBN으로 도서를 찾을 수 없습니다.\n"); 
 }
 
 // 도서 출력 함수
@@ -235,8 +235,7 @@ int main() {
         printf("메뉴를 선택하세요(*숫자만 입력): ");
         scanf("%d", &pick);
         printf("\n");
-
-        // 선택된 메뉴에 따라 해당 함수 호출
+       
         if (pick == 1)
             addBook();
         else if (pick == 2)

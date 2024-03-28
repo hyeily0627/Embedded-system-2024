@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +17,7 @@ typedef struct {
 
 Head head;
 
-// 도서 등록
+// 도서 등록 함수
 void addBook() {
     Book* newBook = (Book*)malloc(sizeof(Book));
     if (newBook == NULL) {
@@ -34,6 +35,7 @@ void addBook() {
 
     newBook->next = NULL;
 
+    // 헤드가 비어있는 경우 새 책을 헤드로 설정, 그렇지 않으면 리스트 끝까지 이동하여 추가
     if (head.head == NULL) {
         head.head = newBook;
     }
@@ -48,7 +50,8 @@ void addBook() {
     printf("\n");
 }
 
-// 도서검색 
+// 도서 검색 함수
+// ++ ISBN, 제목, 저자까지 검색되도록 구현 
 void searchBook() {
     char searchentry[100];
     printf("-- 도서를 검색합니다 -- \n");
@@ -58,7 +61,7 @@ void searchBook() {
     printf("3 저자 \n");
 
     int searchchoice;
-    scanf("%d",&searchchoice);
+    scanf("%d", &searchchoice);
 
     // 검색 항목 선택 후 입력값 받기 
     char searchinput[100];
@@ -72,8 +75,8 @@ void searchBook() {
     while (temp != NULL) {
         if ((searchchoice == 1 && strcmp(temp->ISBN, searchinput) == 0) ||
             (searchchoice == 2 && strcmp(temp->title, searchinput) == 0) ||
-            (searchchoice == 3 && strcmp(temp->author, searchinput) == 0)) 
-        {   
+            (searchchoice == 3 && strcmp(temp->author, searchinput) == 0))
+        {
             found = 1; // 검색 결과를 찾았음을 표시
             printf("도서를 찾았습니다!\n\n");
             printf("도서 제목: %s\n", temp->title);
@@ -111,6 +114,7 @@ void searchBook() {
 논리적으로 다른 동작을 합니다.
 */
 
+// 도서 삭제 함수 
 void deleteBook() {
     char delISBN[100];
     printf("삭제할 도서의 ISBN을 입력하세요: ");
@@ -119,15 +123,16 @@ void deleteBook() {
     Book* current = head.head;
     Book* prev = NULL;
 
+    // 현재 책의 ISBN이 입력한 ISBN과 일치하는 경우 해당 책을 삭제
     while (current != NULL) {
         if (strcmp(current->ISBN, delISBN) == 0) {
             if (prev == NULL) {
-                head.head = current->next;
+                head.head = current->next;		// 헤드를 변경하여 첫 번째 책을 삭제
             }
             else {
-                prev->next = current->next;
+                prev->next = current->next;		// 이전 책의 다음 포인터를 변경하여 책 삭제
             }
-            free(current);
+            free(current); 					// 현재 책의 메모리 해제
             printf("도서가 삭제되었습니다.\n");
             return;
         }
@@ -138,6 +143,7 @@ void deleteBook() {
     printf("해당 ISBN으로 도서를 찾을 수 없습니다.\n");
 }
 
+// 도서 출력 함수 
 void printBooks() {
     if (head.head == NULL) {
         printf("등록된 도서가 없습니다.\n");
@@ -155,9 +161,11 @@ void printBooks() {
     }
 }
 
+// 메인함수
 int main() {
     int pick;
 
+    // 헤드 초기화
     head.head = NULL;
 
     while (1) {
