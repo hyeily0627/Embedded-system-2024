@@ -1,3 +1,0 @@
-﻿  Version_2_2중복서치.cpp
-C:\Sources\Embedded-system-2024\Project_02\Project_02\Version_2_2중복서치.cpp(59,10): warning C4101: 'searchentry' :참조되지 않은 지역 변수입니다.
-  Project_02.vcxproj -> C:\Sources\Embedded-system-2024\Project_02\x64\Debug\Project_02.exe
