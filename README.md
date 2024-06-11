@@ -14,7 +14,7 @@
     - pwd : 기본위치
     - mkdir(make directory) Work: 새로운 work 디렉터리 생성
     - rm(remove) -fr Work: 디렉터리명 삭제
-    - cd work: work(파일명)에 들어감, cd ..: 상위 폴더로 빠져나감
+    - cd work: work(파일명)에 들어감, cd(공백).. : 상위 폴더로 빠져나감
     - ls /etc : 환경 (하얀색 - 파일 / 파란색 – 폴더)
     - nano /etc/nanorc -> 수정불가하므로 아래로 수정
     - sudo nano /etc/nanorc: 관리자 권한
