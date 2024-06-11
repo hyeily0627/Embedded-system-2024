@@ -13,7 +13,7 @@
     - ls : 현재 목록, ls -a : 숨겨져 있는 파일 확인, ls -l: 상세하게 보여줌, ls .etc: 환경 파일 등을 보여주는 디렉토리
     - pwd : 기본위치
     - mkdir(make directory) Work: 새로운 work 디렉터리 생성
-    - rm(remove) -fr Work: 디렉터리 삭제
+    - rm(remove) -fr Work: 디렉터리명 삭제
     - cd work: work(파일명)에 들어감, cd ..: 상위 폴더로 빠져나감
     - ls /etc : 환경 (하얀색 - 파일 / 파란색 – 폴더)
     - nano /etc/nanorc -> 수정불가하므로 아래로 수정
@@ -30,9 +30,9 @@
 
 - 리눅스 상단 *는 수정중이라는 의미 
 
-- cd work/C  work 안에 있는 C 폴더 접근 
+- cd work/C : work 안에 있는 C 폴더 접근 
 
-- gcc -o 컴파일명 기존이름  :  컴파일하는 작업 
+- gcc 기존이름 -o 컴파일명  :  컴파일하는 작업 
 - gcc 기존이름 : 컴파일 자동생성 -> a.out으로 생성 (1개만 생성되므로, 뒤에 생성시 새로운것을 덮어짐)
 
 - ./컴파일명 : 출력파일의 내용 출력 
